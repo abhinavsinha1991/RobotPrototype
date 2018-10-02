@@ -79,7 +79,7 @@ public class SimpleRobot implements Robot {
         //Simulating Third party API call
         Random random=new Random();
         if(random.nextBoolean()){
-            System.out.println("Item scanned successfully");
+            System.out.println("Item scanned successfully.Price is:"+random.nextFloat());
         }else{
             System.out.println("Scan Failure!");
         }
