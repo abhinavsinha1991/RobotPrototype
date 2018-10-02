@@ -41,16 +41,16 @@ public class SimpleRobot implements Robot {
     @Override
     public float walkDistance(int distance) {
         if(distance> MAX_DISTANCE_PER_CHARGE){
-            System.out.print("Max limit reached.Decrease distance.");
+            System.out.println("Max limit reached.Decrease distance.");
         }else {
             if ((currentCharge - (distance * PER_METRE_CHARGE_WITHOUT_WEIGHT)) >= 0.00f) {
                 currentCharge -= distance * PER_METRE_CHARGE_WITHOUT_WEIGHT;
                 if (currentCharge <= 15.00f) {
                     batteryLowIndicator = true;
                 }
-                System.out.print("Robot has moved " + distance + " metres distance and battery status is " + (batteryLowIndicator ? "low." : "adequate."));
+                System.out.println("Robot has moved " + distance + " metres distance and battery status is " + (batteryLowIndicator ? "low." : "adequate."));
             }else{
-                System.out.print("Battery running at "+currentCharge+"%.\nCharge reqd to fulfill request: "+(distance* PER_METRE_CHARGE_WITHOUT_WEIGHT)+"%. Please decrease distance.");
+                System.out.println("Battery running at "+currentCharge+"%.\nCharge reqd to fulfill request: "+(distance* PER_METRE_CHARGE_WITHOUT_WEIGHT)+"%. Please decrease distance.");
             }
         }
         return currentCharge;
@@ -59,16 +59,16 @@ public class SimpleRobot implements Robot {
     @Override
     public float walkWithWeight(int weight,int distance) {
         if(distance>MAX_DISTANCE_PER_CHARGE ||weight> MAX_WEIGHT_CAP){
-            System.out.print("Max limit reached.Decrease distance/weight.");
+            System.out.println("Max limit reached.Decrease distance/weight.");
         }else {
             if (((currentCharge - ((distance * PER_METRE_CHARGE_WITHOUT_WEIGHT)+ (2*weight))) >= 0.00f)) {
                 currentCharge -= (distance * PER_METRE_CHARGE_WITHOUT_WEIGHT)+ (2*weight);
                 if (currentCharge <= 15.00f) {
                     batteryLowIndicator = true;
                 }
-                System.out.print("Robot has moved " + distance + " metres distance with weight "+weight+" kgs and battery status is " + (batteryLowIndicator ? "low." : "adequate."));
+                System.out.println("Robot has moved " + distance + " metres distance with weight "+weight+" kgs and battery status is " + (batteryLowIndicator ? "low." : "adequate."));
             }else{
-                System.out.print("Battery running at "+currentCharge+"%.\nCharge reqd to fulfill request: "+((distance * PER_METRE_CHARGE_WITHOUT_WEIGHT)+ (2*weight))+"%. Please decrease distance/weight.");
+                System.out.println("Battery running at "+currentCharge+"%.\nCharge reqd to fulfill request: "+((distance * PER_METRE_CHARGE_WITHOUT_WEIGHT)+ (2*weight))+"%. Please decrease distance/weight.");
             }
         }
         return currentCharge;
