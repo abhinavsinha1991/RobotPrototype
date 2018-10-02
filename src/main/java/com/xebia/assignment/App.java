@@ -10,13 +10,9 @@ public class App
     {
 
         Robot simpleRobot=RobotFactory.getRobot("");
-        System.out.println("Battery %age:"+simpleRobot.walkDistance(500));
+        System.out.println("Battery %age:"+simpleRobot.walkDistance(3500));
         simpleRobot.scanItem();
-        System.out.println("Battery %age:"+simpleRobot.walkWithWeight(5,100));
-        System.out.println("Battery %age:"+simpleRobot.walkWithWeight(5,100));
-        System.out.println("Battery %age:"+simpleRobot.walkDistance(500));
-        System.out.println("Battery %age:"+simpleRobot.walkDistance(500));
-        System.out.println("Battery %age:"+simpleRobot.walkWithWeight(5,100));
-        System.out.println("Battery %age:"+simpleRobot.walkWithWeight(18,100));
+        System.out.println("Battery %age:"+simpleRobot.walkWithWeight(3,2000));
+        System.out.println("Battery %age:"+simpleRobot.walkWithWeight(12,0));
     }
 }

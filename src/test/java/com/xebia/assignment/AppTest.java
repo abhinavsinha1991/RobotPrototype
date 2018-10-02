@@ -49,6 +49,6 @@ public class AppTest
 
     @Test
     public void moveSomeWeight(){
-        assertEquals(robot.walkWithWeight(8,500),18.39f,0.1f);
+        assertEquals(robot.walkWithWeight(8,500),74.0f,0.0f);
     }
 }
